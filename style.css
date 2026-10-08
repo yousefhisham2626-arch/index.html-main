@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("WhatsApp Image 2026-09-25 at 6.19.05 PM.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* تنسيقات العناوين الأساسية للشاشات الكبيرة */
+.aref-ruqaa-regular {
+    font-family: "Aref Ruqaa", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: rgb(121, 73, 9);
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+h5 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الشبكة (Grid) للأزرار */
+.bu {
+    padding: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* تنسيق الأزرار */
+.bu .b {
+    border: 2px solid rgb(121, 73, 9);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.7); /* خلفية خفيفة لضمان قراءة النص بوضوح */
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.bu .b a {
+    font-family: "Aref Ruqaa", serif;
+    text-decoration: none;
+    color: rgb(121, 73, 9);
+    font-size: 28px;
+    display: block;
+}
+
+.bu .b:hover {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: transparent;
+    border-color: rgb(121, 73, 9);
+    box-shadow: 0 0 15px 5px rgb(121, 73, 9);
+}
+
+/* زر سيدنا محمد يأخذ العرض كامل في الشاشات الكبيرة */
+.bu .c {
+    grid-column: 1 / -1;
+}
+
+/* ==========================================
+   تعديلات الاستجابة للهواتف والأجهزة اللوحية
+   ========================================== */
+
+/* للأجهزة اللوحية (iPad والشاشات المتوسطة أقل من 1024 بكسل) */
+@media screen and (max-width: 1024px) {
+    .bu {
+        grid-template-columns: repeat(2, 1fr); /* عمودين فقط */
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    .bu .b a {
+        font-size: 24px;
+    }
+}
+
+/* للهواتف المحمولة (الشاشات الصغيرة أقل من 600 بكسل) */
+@media screen and (max-width: 600px) {
+    .bu {
+        grid-template-columns: 1fr; /* عمود واحد تحت بعضه */
+        padding: 10px;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    .bu .b {
+        margin: 0; /* إلغاء الهوامش الكبيرة القديمة */
+        border-radius: 15px;
+    }
+
+    .bu .b a {
+        font-size: 22px; /* تصغير حجم خط الأزرار ليناسب الجوال */
+    }
+}
